@@ -1,0 +1,30 @@
+@host = http://localhost:8080
+@groupId = 1
+@historyBeforeId = 100
+
+### Health
+GET {{host}}/health
+
+### Restaurant state
+GET {{host}}/api/restaurant
+
+### History page (use nextHistoryBeforeId)
+GET {{host}}/api/restaurant?historyBeforeId={{historyBeforeId}}
+
+### Add table
+POST {{host}}/api/tables
+Content-Type: application/json
+
+{"capacity": 4}
+
+### Add group (not idempotent)
+POST {{host}}/api/groups
+Content-Type: application/json
+
+{"size": 2}
+
+### Leave queue (Waiting only)
+POST {{host}}/api/groups/{{groupId}}/leave
+
+### Complete visit (Seated only)
+POST {{host}}/api/groups/{{groupId}}/complete
