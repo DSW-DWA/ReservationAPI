@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using RestaurantSeating.Api.Exceptions;
+
 namespace RestaurantSeating.Api;
 
 public sealed class ApiExceptionHandler(IProblemDetailsService problems, ILogger<ApiExceptionHandler> logger)

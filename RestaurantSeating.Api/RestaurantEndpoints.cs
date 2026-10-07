@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Http.Metadata;
+using Microsoft.AspNetCore.Mvc;
+using MinimalApis.Extensions;
+using RestaurantSeating.Api.Models.Requests;
+using RestaurantSeating.Api.Models.Responses;
+
 namespace RestaurantSeating.Api;
 
 public static class RestaurantEndpoints
